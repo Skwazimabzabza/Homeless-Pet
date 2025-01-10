@@ -3,14 +3,14 @@
 #include <iostream>
 
 
-class HomelessPet {
+class HomePet {
 public:
     std::string Name;
     std::string Breed;
     std::string EyeColor;
     int Age;
     
-    HomelessPet(std::string name, std::string breed, std::string EC, int age): Name(name), Breed(breed), EyeColor(EC), Age(age){}
+    HomePet(std::string name, std::string breed, std::string EC, int age): Name(name), Breed(breed), EyeColor(EC), Age(age){}
 
     virtual void PrintPet() {
         std::cout << "Имя: " << Name << std::endl;
@@ -20,42 +20,42 @@ public:
     }
 };
 
-class Dog : HomelessPet {
+class Dog : HomePet {
     bool IsItTamed;
 public:
-    Dog(std::string name, std::string breed, std::string EC, int age, bool IIT): HomelessPet(name, breed, EC, age), IsItTamed(IIT){}
+    Dog(std::string name, std::string breed, std::string EC, int age, bool IIT): HomePet(name, breed, EC, age), IsItTamed(IIT){}
 
     void PrintDog() {
         std::cout << "Собака" << std::endl;
-        HomelessPet::PrintPet();
+        HomePet::PrintPet();
         std::cout << "Приручена ли: " << (IsItTamed ? "да" : "нет") << std::endl;
         std::cout << std::endl;
     }
 };
 
-class Cat :HomelessPet {
+class Cat :HomePet {
     double Weight;
     std::string Color;
 public:
-    Cat(std::string name, std::string breed, std::string EC, int age, double weight, std::string color): HomelessPet(name,breed,EC,age), Weight(weight), Color(color){}
+    Cat(std::string name, std::string breed, std::string EC, int age, double weight, std::string color): HomePet(name,breed,EC,age), Weight(weight), Color(color){}
 
     void PrintCat() {
         std::cout << "Кошка" << std::endl;
-        HomelessPet::PrintPet();
+        HomePet::PrintPet();
         std::cout << "Вес: " << Weight << " килограмм" << std::endl;
         std::cout << "Цвет: " << Color << std::endl;
         std::cout << std::endl;
     }
 };
 
-class Parrot :HomelessPet {
+class Parrot :HomePet {
     bool CanSpeak;
 public:
-    Parrot(std::string name, std::string breed, std::string EC, int age, bool CS): HomelessPet(name, breed, EC, age), CanSpeak(CS){}
+    Parrot(std::string name, std::string breed, std::string EC, int age, bool CS): HomePet(name, breed, EC, age), CanSpeak(CS){}
 
     void PrintParrot() {
         std::cout << "Попугай" << std::endl;
-        HomelessPet::PrintPet();
+        HomePet::PrintPet();
         std::cout << "Умеет ли говорить: " << (CanSpeak ? "Да": "Нет");
         std::cout << std::endl;
     }
