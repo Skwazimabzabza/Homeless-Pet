@@ -12,7 +12,7 @@ public:
     
     HomePet(std::string name, std::string breed, std::string EC, int age): Name(name), Breed(breed), EyeColor(EC), Age(age){}
 
-    virtual void PrintPet() {
+    void PrintPet() const{
         std::cout << "Имя: " << Name << std::endl;
         std::cout << "Порода:" << Breed << std::endl;
         std::cout << "Цвет глаз: " << EyeColor << std::endl;
@@ -25,7 +25,7 @@ class Dog : HomePet {
 public:
     Dog(std::string name, std::string breed, std::string EC, int age, bool IIT): HomePet(name, breed, EC, age), IsItTamed(IIT){}
 
-    void PrintDog() {
+    void PrintDog() const{
         std::cout << "Собака" << std::endl;
         HomePet::PrintPet();
         std::cout << "Приручена ли: " << (IsItTamed ? "да" : "нет") << std::endl;
@@ -39,7 +39,7 @@ class Cat :HomePet {
 public:
     Cat(std::string name, std::string breed, std::string EC, int age, double weight, std::string color): HomePet(name,breed,EC,age), Weight(weight), Color(color){}
 
-    void PrintCat() {
+    void PrintCat() const{
         std::cout << "Кошка" << std::endl;
         HomePet::PrintPet();
         std::cout << "Вес: " << Weight << " килограмм" << std::endl;
@@ -53,7 +53,7 @@ class Parrot :HomePet {
 public:
     Parrot(std::string name, std::string breed, std::string EC, int age, bool CS): HomePet(name, breed, EC, age), CanSpeak(CS){}
 
-    void PrintParrot() {
+    void PrintParrot() const{
         std::cout << "Попугай" << std::endl;
         HomePet::PrintPet();
         std::cout << "Умеет ли говорить: " << (CanSpeak ? "Да": "Нет");
