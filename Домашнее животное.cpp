@@ -1,11 +1,7 @@
-﻿// Домашнее животное.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Домашнее животное.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 #include <iostream>
 
-/*Создать базовый класс «Домашнее животное» и производные 
-классы «Собака», «Кошка», «Попугай». С помощью
-конструктора установить имя каждого животного и его
-характеристики.*/
 
 class HomePet {
 public:
